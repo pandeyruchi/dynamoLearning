@@ -1,8 +1,7 @@
 var AWS = require("aws-sdk");
 
 AWS.config.update({
-    region: "us-west-2",
-    endpoint: "http://localhost:8000"
+    region: "ap-southeast-1"
 });
 
 var dynamodb = new AWS.DynamoDB();
@@ -18,8 +17,9 @@ var params = {
         { AttributeName: "title", AttributeType: "S" }
     ],
     ProvisionedThroughput: {
-        ReadCapacityUnits: 10,
-        WriteCapacityUnits: 10
+        ReadCapacityUnits: 1,
+        WriteCapacityUnits: 1
+
     }
 };
 
